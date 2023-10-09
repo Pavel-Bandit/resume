@@ -1,0 +1,117 @@
+<div>
+  {{#with person}}
+    <section>
+ <div><h1>{{name}}</h1></div>
+        <ul>
+        <li>{{age}}</li>
+        <li>{{gender}}</li>
+        </ul>
+        
+       <div>
+        {{> title data="Address" }}
+        <ul>
+       {{#each address}}
+        <li> {{.}}</li>
+       {{/each}} 
+        </ul>
+        </div> 
+        <div>
+          {{> title data="Education" }}
+        <ul>
+  {{#each education}}
+    <li>{{degree}}</li>
+    <li>{{major}}</li>
+    <li>{{university}}</li>
+    <li>{{graduationYear}}</li>
+  {{/each}}
+   </ul>
+        </div> 
+        
+
+ <div>
+      {{> title data="WorkExperience" }}
+        <ul>
+  {{#each workExperience}}
+    <li>{{company}}</li>
+    <li>{{title}}</li>
+    <li>{{startDate}}</li>
+    <li>{{responsibilities}}</li>
+    <li>{{year_founded}}</li>
+    <li>{{industry}}</li>
+    
+
+ <div>
+    <div>{{> title data="Employees" }} </div>
+    <hr>
+    <ul>
+        {{#each employees}}
+    <div><h1>{{name}}</h1></div>
+    <li>{{position}}</li>
+    <li>{{department}}</li>
+    </ul>
+<div>{{> title data="Projects" }} 
+    <ul>
+        {{#each projects}}
+    <li>{{name}}</li>
+    <li>{{description}}</li>
+    <li>{{status}}</li>
+    </ul>
+    <br>
+<div>
+
+
+<div>
+  <div>{{> title data="Teams" }}</div>
+ <ul>
+     {{#each teams}}
+     <li>{{team_name}}</li>
+     {{#each team_leader}}
+     <li>{{.}}</li>
+     {{/each}}
+</ul>
+<br>
+<div>
+    <div>{{> title data="Team members" }} </div>
+    <hr>
+    <ul>
+        {{#each team_members}}
+    <div><h1>{{name}}</h1></div>
+    <li>{{title}}</li>
+    <li>{{email}}</li>
+    <li>{{skills}}</li>
+
+<div>
+    <div>{{> title data="Projects" }} </div>
+    
+        {{#each projects}}
+    <li>{{name}}</li>
+    <li>{{description}}</li>
+    <li>{{technologies}}</li>
+
+<div>
+    <div>{{> title data="Team members" }} </div>
+    <hr>
+        {{#each team_members}}
+    <div><h1>{{name}}</h1></div>
+    <li>{{title}}</li>
+    {{/each}}
+      </div>
+{{/each}}
+</div>
+{{/each}}
+</ul>   
+</div>
+<br>
+ {{/each}}
+ </div>
+{{/each}}
+</div>
+{{/each}}
+</ul>
+</div>
+</ul>
+</div>
+{{/each}}
+</section>
+{{/with}}
+</div>
