@@ -1,0 +1,74 @@
+<div>
+  <section>
+    <div><h1><strong>Mac</strong></h1></div>
+    <hr />
+    <br />
+    <div><h3><b><li>{{name}}</li>
+          <li> {{description}}</li>
+          <li>{{price}}</li>
+          <li>{{category}}</li></b></h3></div>
+    <br />
+    <div>
+      <div><h2>Features</h2></div>
+      {{#with features}}
+        <hr />
+        <br />
+        <div><h3>Processor</h3></div>
+        {{#each processor}}
+          <li>{{this}}</li>
+        {{/each}}
+        <br />
+        <div><h3>Memory</h3></div>
+        {{#each memory}}
+          <li>{{this}}</li>
+        {{/each}}
+        <br />
+        <div><h3>Storage</h3></div>
+        {{#each storage}}
+          <li>{{this}}</li>
+        {{/each}}
+        <br />
+        <div><h3>Display</h3></div>
+        {{#each display}}
+          <li>{{this}}</li>
+        {{/each}}
+        <br />
+        <div><h3>Graphics</h3></div>
+        {{#each graphics}}
+          <li>{{this}}</li>
+        {{/each}}
+        <br />
+        <div><h3>Ports</h3></div>
+        {{#each ports}}
+          <li>{{type}}</li>
+          <li>{{count}}</li>
+          <br />
+          <div><h3>Features</h3></div>
+          {{#each features}}
+            <li>{{this}}</li>
+          {{/each}}
+          <li>{{type}}</li>
+          <li>{{count}}</li>
+        {{/each}}
+        <br />
+        <div><h3>Battery</h3></div>
+        {{#each battery}}
+          <li>{{this}}</li>
+        {{/each}}
+        <li>{{weight}}</li>
+        <div><h3>Dimensions</h3></div>
+        {{#each dimensions}}
+          <li>{{this}}</li>
+        {{/each}}
+        <li>{{operating_system}}</li>
+        <br />
+        <div><h3>Accessories</h3></div>
+        {{#each accessories}}
+          <li>{{name}}</li>
+          <li>{{price}}</li>
+        {{/each}}
+        <br />
+      {{/with}}
+    </div>
+  </section>
+</div>
