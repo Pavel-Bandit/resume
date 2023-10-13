@@ -1,0 +1,120 @@
+<div>
+  <section>
+    <div><h1><strong>Car</strong></h1></div>
+    <hr />
+    <br />
+    <div><h2><b>{{make}}
+          {{model}}
+          {{year}}
+          {{color}}</b></h2></div>
+    <hr />
+    <br />
+
+    <div>
+      <ul>
+        {{#with features}}
+          <div><h2>Features</h2></div>
+          <hr />
+          <br />
+          {{#with interior}}
+            <div><h2><b>Interior</b></h2></div>
+            <hr />
+            <br />
+            <div><h3>Seats</h3></div>
+            {{#each seats}}
+              <li>{{this}}</li>
+            {{/each}}
+            <br />
+            <div><h3>Dashboard</h3></div>
+            {{#with dashboard}}
+              <li>{{material}}</li>
+              <li>{{color}}</li>
+              <br />
+              <div><h3>Display</h3></div>
+              {{#each display}}
+                <li>{{this}}</li>
+              {{/each}}
+            {{/with}}
+            <br />
+            <div><h3>Audio</h3></div>
+            {{#each audio}}
+              <li>{{this}}</li>
+            {{/each}}
+            <br />
+          {{/with}}
+          <div><h2><b>Exterior</b></h2></div>
+          <hr />
+          <br />
+          {{#with exterior}}
+            <div><h3>Wheels</h3></div>
+            {{#each wheels}}
+              <li>{{this}}</li>
+            {{/each}}
+            <br />
+            <div><h3>Headlights</h3></div>
+            {{#each headlights}}
+              <li>{{this}}</li>
+            {{/each}}
+            <br />
+            <div><h3>Sunroof</h3></div>
+            {{#each sunroof}}
+              <li>{{this}}</li>
+            {{/each}}
+          {{/with}}
+          <br />
+          <div><h2><b>Safety</b></h2></div>
+          <hr />
+          <br />
+          {{#with safety}}
+            <br />
+            <div><h3>Airbags</h3></div>
+            {{#each airbags}}
+              <li>{{this}}</li>
+            {{/each}}
+            <br />
+            <div><h3>Assistance</h3></div>
+            {{#each assistance}}
+              <li>{{this}}</li>
+            {{/each}}
+
+          {{/with}}
+
+        {{/with}}
+        <br />
+        <div><h2><b>Engine</b></h2></div>
+        <hr />
+        <br />
+        {{#with engine}}
+          <li>{{type}}</li>
+          <li>{{displacement}}</li>
+          <li>{{horsepower}}</li>
+          <li>{{torque}}</li>
+          <br />
+          {{#each transmission}}
+            <li>{{this}}</li>
+          {{/each}}
+        {{/with}}
+        <br />
+        <div><h3>Fuel economy</h3></div>
+        {{#each fuel_economy}}
+          <li>{{this}}</li>
+        {{/each}}
+        <br />
+        <div><h2><b>Price</b></h2></div>
+        <hr />
+        <br />
+        {{#with price}}
+          <li>{{base}}</li>
+          <li>{{destination}}</li>
+          <br />
+          <div><h3>Options</h3></div>
+          {{#each options}}
+            <li>{{this}}</li>
+          {{/each}}
+          <br />
+          <li>{{total}}</li>
+        {{/with}}
+      </ul>
+    </div>
+  </section>
+</div>
