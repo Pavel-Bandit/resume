@@ -1,0 +1,193 @@
+<main>
+
+  <div class='text-center'>
+    <div class='text-primary'>
+      <h1 class='text-uppercase'>Task21</h1>
+    </div>
+  </div>
+  <hr />
+  <br />
+
+  <div class='card'>
+
+    <div class='card-body'>
+      {{#with heading}}
+        <div class='text-center'><h2
+            class='text-info'
+          >Heading</h2></div>
+
+        <hr />
+
+        <div class='text-center'><h2
+            class='text-muted'
+          >Main</h2></div>
+        {{#with main}}
+          <li class='text-muted'>{{title}}</li>
+          <li class='text-muted'>{{text}}</li>
+          <br />
+          {{#with button_text}}
+            <div class='btn-group'>
+
+              <button
+                type='button'
+                class='btn btn-primary'
+              >{{solid}}</button>
+
+              <button
+                type='button'
+                class='btn btn-outline-secondary'
+              >{{outline}}</button>
+
+            </div>
+          {{/with}}
+
+        {{/with}}
+        <hr />
+        <br />
+
+        <div class='text-center'><h2
+            class='text-muted'
+          >Second</h2></div>
+        {{#with second}}
+          <li class='text-muted'>{{title}}</li>
+          <li class='text-muted'>{{text}}</li>
+          <br />
+          {{#with button_text}}
+            <div class='btn-group'>
+
+              <button
+                type='button'
+                class='btn btn-primary'
+              >{{solid}}</button>
+
+              <button
+                type='button'
+                class='btn btn-outline-secondary'
+              >{{outline}}</button>
+
+            </div>
+          {{/with}}
+
+        {{/with}}
+        <hr />
+        <br />
+
+        <div class='text-center'><h2
+            class='text-muted'
+          >Subblock</h2></div>
+        {{#with subblock}}
+          <li class='text-muted'>{{title}}</li>
+          <li class='text-muted'>{{text}}</li>
+          <br />
+          {{#with button_text}}
+            <div class='btn-group'>
+
+              <button
+                type='button'
+                class='btn btn-primary'
+              >{{solid}}</button>
+
+              <button
+                type='button'
+                class='btn btn-outline-secondary'
+              >{{outline}}</button>
+
+            </div>
+          {{/with}}
+
+        {{/with}}
+
+      {{/with}}
+
+    </div>
+  </div>
+
+  <br />
+  <br />
+
+  <div class='card'>
+
+    <div class='card-body'>
+      {{#with nested_display}}
+        <div class='text-center'><h2
+            class='text-info'
+          >Nested display</h2></div>
+        <hr />
+        <div class='text-center'><h2
+            class='text-muted'
+          >{{title}}</h2></div>
+        <br />
+
+        {{#with children_display}}
+          <li>{{title}}</li>
+          <li>{{text}}</li>
+          <br />
+          {{#with button}}
+            <button
+              type='button'
+              class='btn btn-dark'
+            >{{text}}</button>
+          {{/with}}
+
+        {{/with}}
+
+        <br />
+        <br />
+
+        <h3 class='text-center'><p
+            class='text-bg-secondary'
+          >{{header_text}}</p></h3>
+        <br />
+        {{#with button}}
+          <div class='d-grid'>
+            <button
+              type='button'
+              class='btn btn-primary btn-block'
+            >{{text}}</button>
+          </div>
+        {{/with}}
+
+      {{/with}}
+      <br />
+
+    </div>
+  </div>
+  <br />
+  <br />
+  <div class='card'>
+    <div class='card-body'>
+      {{#with paragraph}}
+        <div class='text-center'><h2
+            class='text-info'
+          >Paragraph</h2></div>
+        <hr />
+        <div class='text-center'><h2
+            class='text-body'
+          >{{title}}</h2></div>
+        <br />
+        <li class='text-muted'>{{text}}</li>
+        <br />
+        {{#with button}}
+          <button
+            type='button'
+            class='btn btn-outline-info'
+          ><a
+              href='{{url}}'
+              target='_blank'
+            >{{text}}</a></button>
+        {{/with}}
+        <br />
+        <br />
+        <div><p>List name</p></div>
+        {{#each list_name}}
+
+          <a href='{{url}}' target='_blank'>{{text}}</a>
+
+        {{/each}}
+
+      {{/with}}
+
+    </div>
+  </div>
+
+</main>
