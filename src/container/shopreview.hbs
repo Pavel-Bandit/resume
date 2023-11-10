@@ -1,0 +1,178 @@
+<main>
+
+  {{#with navigation}}
+    <div class='card'>
+      <div class='nav'>
+        {{#each links}}
+          <div class='nav-item'>
+            <a class='nav-link' href='{{href}}'>{{text}}</a>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+    <br />
+  {{/with}}
+  <br />
+
+  {{#with formBlock}}
+    <h2>{{header}}</h2>
+    {{#with rating}}
+      <p>{{title}}: {{value}}</p>
+    {{/with}}
+    <br />
+    {{#with actionBlock}}
+      <ul class='nav nav-tabs'>
+        {{#each tabs}}
+
+          <li class='nav-item'>
+            <a class='nav-link' href='#'>{{#if
+                isActive
+              }}{{/if}}{{text}}</a>
+          </li>
+
+        {{/each}}
+      </ul>
+      <br />
+      <hr />
+      <br />
+      {{#with report}}
+        <div class='card'>
+          <div class='card-body'>
+            <h4>{{title}}</h4>
+            {{#with button}}
+              <a
+                class='btn btn-secondary'
+                href='{{link}}'
+              >{{text}}</a>
+            {{/with}}
+          </div>
+
+        </div>
+      {{/with}}
+    {{/with}}
+    <br />
+    <hr />
+    <br />
+
+    {{#with feedbackBlock}}
+      <h2>{{title}}</h2>
+      <br />
+      {{#each buttons}}
+        {{#if isWarning}}
+          <button
+            class='btn btn-warning'
+          >{{text}}</button>{{/if}}
+        {{#if isSuccess}}
+          <button
+            class='btn btn-success'
+          >{{text}}</button>{{/if}}
+        {{#if isDanger}}
+          <button
+            class='btn btn-danger'
+          >{{text}}</button>{{/if}}
+      {{/each}}
+      <br />
+    {{/with}}
+    <br />
+    <hr />
+    <br />
+
+  {{/with}}
+
+  {{#each reviewList}}
+    <div class='card p-4'>
+
+      <div class='card'>
+        {{#with title}}
+          <div class='card-body'>
+            <h4>{{userName}}</h4>
+            <p>{{caption}}</p>
+            <p>{{date}}</p>
+          </div>
+        {{/with}}
+
+        {{#with reviewBody}}
+          <div class='card'>
+            <div class='card-body'>
+
+              {{#with seller}}<p>{{title}}:
+                  {{value}}</p>{{/with}}
+              {{#with rating}}
+                <p>{{title}}: {{value}}</p>{{/with}}
+
+              {{#each text}} <p>{{this}}</p>{{/each}}
+
+              {{#with advantages}}
+                <p><strong>{{title}}:</strong>
+                  <br />
+                  {{text}}</p>{{/with}}
+              {{#with disadvantages}}
+                <p><strong>{{title}}:</strong>
+                  <br />
+                  {{text}}</p>{{/with}}
+              <div class='row'>
+                {{#each images}}
+                  <div class='col-1'>
+                    <img
+                      src='{{this}}'
+                      class='card-img-bottom'
+                      alt='foto'
+                    />
+                  </div>
+                {{/each}}
+              </div>
+            </div>
+          </div>
+          <br />
+          <br />
+          {{#each coments}}
+            <div class='card bg-light m-4'>
+              <div class='card-body'>
+                <h4>{{userName}}</h4>
+                <p>{{date}}</p>
+                <p>{{text}}</p>
+              </div>
+            </div>
+            <br />
+          {{/each}}
+        {{/with}}
+        <div>
+
+        </div>
+      </div>
+    </div>
+    <br />
+  {{/each}}
+
+  {{#with service}}
+
+    <div class='card text-center bg-success'>
+      <h2>{{title}}</h2>
+      <p>{{description}}</p>
+      <div class='card-body'>
+        {{#each buttons}}
+          <a
+            class='btn btn-primary'
+            href='{{link}}'
+          >{{text}}</a>
+        {{/each}}
+      </div>
+    </div>
+
+  {{/with}}
+
+  <br />
+  <hr />
+  <br />
+
+   <div class='nav'>
+    {{#each footer}}
+      <div class='nav-item'>
+        {{#each this}}
+          <a class='nav-link {{#if @last}}disabled{{/if}}' href='{{link}}'>{{text}}</a>
+        {{/each}}
+      </div>
+    {{/each}}
+  </div>
+
+</main>
