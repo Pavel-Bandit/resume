@@ -1,0 +1,271 @@
+<main>
+
+  {{#with navigation}}
+    <div class='card'>
+      <div class='nav'>
+        {{#each links}}
+          <div class='nav-item'>
+            <a class='nav-link' href='{{href}}'>{{text}}</a>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  {{/with}}
+  <br />
+  <br />
+
+  <h2>{{header}}</h2>
+
+  <br />
+  <div class='row g-2'>
+    {{#each sortBlock}}
+      <div class='col-3'>
+
+        <label for='floatingSelectGrid'>{{label}}</label>
+        <div class='form-floating'>
+
+          <select class='form-select'>
+
+            <option selected>{{placeholder}}</option>
+            {{#each options}}
+
+              <option value='{{value}}'>{{text}}</option>
+            {{/each}}
+
+          </select>
+
+        </div>
+
+      </div>
+    {{/each}}
+  </div>
+  <br />
+  <br />
+
+  <div class='row'>
+    <div class='col-4'>
+      {{#with filterBlock}}
+        <div class='card'>
+          <div class='card-body'>
+            {{#with sellers}}
+              <h3>{{title}}</h3>
+              <br />
+              {{#each list}}
+                <div class='form-check'>
+                  <input
+                    class='form-check-input'
+                    type='checkbox'
+                    value=''
+                    id='flexCheckDefault'
+                  />
+                  <label
+                    class='form-check-label'
+                    for='flexCheckDefault'
+                  >
+                    {{value}}
+                  </label>
+
+                </div>
+                <br />
+              {{/each}}
+            {{/with}}
+            <br />
+            <hr />
+            <br />
+            {{#with brands}}
+              <h3>{{title}}</h3>
+              <br />
+              {{#with input}}<input
+                  class='form-control'
+                  list='datalistOptions'
+                  id='exampleDataList'
+                  placeholder='{{placeholder}}'
+                />{{/with}}
+              <br />
+              {{#each options}}
+                <div class='form-check'>
+                  <input
+                    class='form-check-input'
+                    type='checkbox'
+                    value=''
+                    id='flexCheckDefault'
+                  />
+                  <label
+                    class='form-check-label'
+                    for='flexCheckDefault'
+                  >
+                    {{value}}
+                  </label>
+
+                </div>
+                <br />
+              {{/each}}
+            {{/with}}
+            <br />
+            <hr />
+            <br />
+
+            {{#with price}}
+              <h3>{{title}}</h3>
+              <br />
+              {{#with range}}
+                <input
+                  class='form-control'
+                  list='datalistOptions'
+                  id='exampleDataList'
+                  placeholder='{{from}}'
+                />
+                <br />
+                <input
+                  class='form-control'
+                  list='datalistOptions'
+                  id='exampleDataList'
+                  placeholder='{{to}}'
+                />
+              {{/with}}
+              <br />
+              {{#with button}}
+                <a
+                  class='btn btn-outline-dark'
+                  href='{{link}}'
+                >{{text}}</a>
+              {{/with}}
+              <br />
+            {{/with}}
+            <br />
+            <hr />
+            <br />
+            {{#each filterList}}
+              <h3>{{title}}</h3>
+
+              {{#each options}}
+                <div class='form-check'>
+                  <input
+                    class='form-check-input'
+                    type='checkbox'
+                    value=''
+                    id='flexCheckDefault'
+                  />
+                  <label
+                    class='form-check-label'
+                    for='flexCheckDefault'
+                  >
+                    {{value}}
+                  </label>
+
+                </div>
+                <br />
+
+              {{/each}}
+              <hr />
+            {{/each}}
+          </div>
+        </div>
+      {{/with}}
+    </div>
+
+    <div class='col-8'>
+      <div class='card-group'>
+        {{#each goodsList}}
+
+          <div class='card'>
+            <img
+              class='card-img-top'
+              src='{{img}}'
+              alt='{{name}}'
+            />
+            <div class='card-body'>
+              <h5 class='card-title'>{{name}}
+                <span
+                  class='badge rounded-pill text-bg-warning text-lowercased'
+                >{{#if isHot}}
+                    <span>HOT!</span>
+                  {{/if}}</span>
+                <span
+                  class='badge rounded-pill text-bg-primary text-lowercased'
+                >{{#if isNew}}
+                    <span>New</span>
+                  {{/if}}</span>
+                <span
+                  class='badge rounded-pill text-bg-primary text-lowercased'
+                >{{#if isFast}}
+                    <span>Fast</span>
+                  {{/if}}</span>
+                <span
+                  class='badge rounded-pill text-bg-primary text-lowercased'
+                >{{#if isFree}}
+                    <span>Free</span>
+                  {{/if}}</span>
+              </h5>
+              {{#with review}}
+                <p class='card-text'>{{amount}}:
+                  {{text}}</p>
+
+              {{/with}}
+              <p class='card-text'>{{price}}</p>
+              <p class='card-text'>{{delivery}}</p>
+              {{#each buttons}}
+                {{#if isPrimary}}<a
+                    class='btn btn-primary'
+                    href='{{link}}'
+                  >{{text}}</a>{{/if}}
+                <br />
+                {{#if isSecondary}}<a
+                    class='btn btn-secondary'
+                    href='{{link}}'
+                  >{{text}}</a>{{/if}}
+              {{/each}}
+              <br />
+              <br />
+              {{#each characteristics}}
+
+                <ul>
+                  <li>
+                    {{title}}:
+                    {{value}}
+                  </li>
+                </ul>
+              {{/each}}
+            </div>
+          </div>
+
+          <br />
+
+        {{/each}}
+      </div>
+    </div>
+  </div>
+
+  <br />
+  {{#with service}}
+
+    <div class='card text-center bg-success'>
+      <h2>{{title}}</h2>
+      <p>{{description}}</p>
+      <div class='card-body'>
+        {{#each buttons}}
+          <a
+            class='btn btn-primary'
+            href='{{link}}'
+          >{{text}}</a>
+        {{/each}}
+      </div>
+    </div>
+
+  {{/with}}
+
+  <br />
+  <hr />
+  <br />
+
+  <div class='nav'>
+    {{#each footer}}
+      <div class='nav-item'>
+        {{#each this}}
+          <a class='nav-link' href='{{link}}'>{{text}}</a>
+        {{/each}}
+      </div>
+    {{/each}}
+  </div>
+
+</main>
